@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useUser } from "../context/usuarioContext";
+import API_BASE_URL from "../config-rota-api/config";
 
 interface Emprestimo {
   id_emprestimo: number;
@@ -27,7 +28,7 @@ export default function EmprestimoScreen() {
 
       try {
         const response = await fetch(
-          `http://192.168.1.4:4000/api/emprestimos/${userId}`
+          `${API_BASE_URL}/api/emprestimos/${userId}`
         );
         const data = await response.json();
 
@@ -50,7 +51,7 @@ export default function EmprestimoScreen() {
   const devolverLivro = async (idEmprestimo: number) => {
     try {
       const response = await fetch(
-        `http://192.168.1.4:4000/api/emprestimos/${idEmprestimo}/devolver`,
+        `${API_BASE_URL}/api/emprestimos/${idEmprestimo}/devolver`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

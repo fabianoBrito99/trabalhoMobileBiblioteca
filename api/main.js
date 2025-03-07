@@ -17,6 +17,7 @@ const allowedOrigins = [
   "http://10.0.2.2:3000", // Para emuladores Android
   "http://192.168.1.4:8081", // Endereço do Expo
   "http://localhost:8081",
+  "http://192.168.1.101:4000"
 ];
 
 app.use(
@@ -46,6 +47,6 @@ app.use("/api", emprestimosRouter);
 
 
 const PORT = 4000;
-app.listen(PORT, () => {
-  console.log(`API iniciada na porta: ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`API rodando na rede em:${PORT}`);
 });

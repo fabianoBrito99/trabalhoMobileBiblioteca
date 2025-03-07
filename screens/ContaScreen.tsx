@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "./LoginScreen";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useAuth } from "../context/context";
+import API_BASE_URL from "../config-rota-api/config";
 
 const ContaScreen: React.FC = () => {
   const { userId, clearUser } = useUser();
@@ -20,7 +21,7 @@ const ContaScreen: React.FC = () => {
 
       try {
         const response = await fetch(
-          `http://192.168.1.4:4000/api/usuario/${userId}`
+          `${API_BASE_URL}/api/usuario/${userId}`
         );
         const data = await response.json();
         if (data.usuario) {

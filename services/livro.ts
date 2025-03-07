@@ -1,14 +1,15 @@
 import * as FileSystem from "expo-file-system";
+import API_BASE_URL from "../config-rota-api/config";
 
 export const getLivros = async () => {
-  const response = await fetch("http://192.168.1.4:4000/livro", {});
+  const response = await fetch(`${API_BASE_URL}/livro`, {});
   const data = await response.json();
   return data;
   
 };
 
 export const getLivroDetalhes = async (livroId: number) => {
-  const response = await fetch(`http://192.168.1.4:4000/livro/${livroId}`);
+  const response = await fetch(`${API_BASE_URL}/livro/${livroId}`);
   const data = await response.json();
   return data;
 };
@@ -42,7 +43,7 @@ export const createLivro = async (
     }
   }
 
-  const response = await fetch("http://192.168.1.4:4000/livro", {
+  const response = await fetch(`${API_BASE_URL}/livro`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -90,7 +91,7 @@ export const updateLivro = async (
   year: string,
   token: string
 ) => {
-  const response = await fetch(`http://192.168.1.4:4000/livro/${id}`, {
+  const response = await fetch(`${API_BASE_URL}/livro/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -101,7 +102,7 @@ export const updateLivro = async (
 };
 
 export const deleteLivro = async (id: number, token: string) => {
-  await fetch(`http://192.168.1.4:4000/livro/${id}`, {
+  await fetch(`${API_BASE_URL}/livro/${id}`, {
     method: "DELETE",
   });
 };

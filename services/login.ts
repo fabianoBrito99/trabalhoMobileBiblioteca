@@ -1,3 +1,5 @@
+import API_BASE_URL from "../config-rota-api/config";
+
 export default async function Login(state: {}, formData: any) {
   console.log("formData:", formData); // 🔹 Verificando se os dados estão corretos
 
@@ -7,7 +9,7 @@ export default async function Login(state: {}, formData: any) {
   try {
     if (!nome_usuario || !password) throw new Error("Preencha os dados.");
 
-    const response = await fetch("http://192.168.1.4:4000/api/login", {
+    const response = await fetch(`${API_BASE_URL}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +30,7 @@ export default async function Login(state: {}, formData: any) {
 
     console.log("Login bem-sucedido:", data.usuario);
 
-    return { data: data.usuario, ok: true, error: "" }; // 🔹 Retornando `ok: true` para indicar sucesso
+    return { data: data.usuario, ok: true, error: "" }; 
   } catch (error: any) {
     return { data: null, ok: false, error: error.message || "Erro desconhecido" };
   }

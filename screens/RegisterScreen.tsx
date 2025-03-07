@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Alert, StyleSheet } from "react-native";
 import { StackNavigationProp } from '@react-navigation/stack';
+import API_BASE_URL from "../config-rota-api/config";
 
 // Definição dos tipos de navegação
 type RootStackParamList = {
@@ -64,7 +65,7 @@ export default function RegisterScreen({ navigation }: RegisterScreenProps) {
                 numero: numero,
             };
 
-            const response = await fetch('http://192.168.1.4:4000/api/usuario', {
+            const response = await fetch(`${API_BASE_URL}/api/usuario`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

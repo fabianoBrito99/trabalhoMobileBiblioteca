@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { getLivroDetalhes } from "../services/livro"; // Assumindo que esta função já existe para buscar os dados do livro
 import { useUser } from "../context/usuarioContext";
+import API_BASE_URL from "../config-rota-api/config";
 
 const BookDetailScreen = ({ route }) => {
   const { livroId } = route.params;
@@ -20,7 +21,7 @@ const BookDetailScreen = ({ route }) => {
     const fetchLivroDetalhes = async () => {
       try {
         const response = await fetch(
-          `http://192.168.1.4:4000/livro/${livroId}`
+          `${API_BASE_URL}/livro/${livroId}`
         );
         const data = await response.json();
         setLivro(data); // Ajuste se necessário
@@ -42,7 +43,7 @@ const BookDetailScreen = ({ route }) => {
 
     try {
       const response = await fetch(
-        `http://192.168.1.4:4000/api/emprestimos/${livroId}/reservar`,
+        `${API_BASE_URL}/api/emprestimos/${livroId}/reservar`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

@@ -1,14 +1,11 @@
-// components/AppNavigator.tsx
 import React from "react";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { useAuth } from "../context/context";
 import AuthStack from "./authStack";
 import MainStack from "./MainStack";
 
-
 export default function AppNavigator() {
   const { isLoggedIn } = useAuth();
-
 
   return (
     <NavigationContainer>
