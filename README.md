@@ -41,9 +41,13 @@ npm run dev
 
 
 # Sobre o Projeto
-O Mobile Biblioteca é um aplicativo desenvolvido para facilitar a consulta e o gerenciamento de livros em uma biblioteca. Ele permite aos usuários ver os livros disponíveis, visualizar informações detalhadas e gerenciar empréstimos diretamente pelo aplicativo.
+O App da Biblioteca nasceu da necessidade real enfrentada pela biblioteca da igreja onde congrego. Atualmente, todo o gerenciamento de empréstimos e registros de livros é feito manualmente em papel, o que dificulta a organização, aumenta a chance de erros e torna o processo pouco eficiente.
 
-A aplicação se comunica com uma API backend hospedada no Render, onde estão armazenados os dados sobre os livros, usuários e transações. O banco de dados também está rodando na infraestrutura do Render, garantindo a persistência das informações e a escalabilidade do sistema.
+Diante desse problema, desenvolvi inicialmente um sistema web para automatizar a gestão da biblioteca, permitindo um controle mais eficiente e organizado. No entanto, esse trabalho de mobile vi uma oportunidade de testar como seria as funcionalidades no mobile e até porque hoje em dia todo mundo tem um celular e talvez seria interresante um aplicativo do que um sistema web.
+
+O objetivo principal dessa versão é avaliar a viabilidade de migrar totalmente para um sistema mobile ou, pelo menos, integrar funcionalidades que melhorem a experiência dos usuários, como consulta rápida ao acervo, notificações sobre devoluções e histórico de empréstimos diretamente pelo celular.
+
+Ataulmente esse apk mobile está funcionando assim: O Aplicativo se comunica com uma API backend hospedada no **Render**, onde estão armazenados os dados sobre os livros, usuários e emprestimos. O banco de dados está rodando na infraestrutura da **railway**, garantindo a persistência das informações e a escalabilidade do sistema.
 
 # Tecnologias Utilizadas
 - Frontend: React Native com Expo
