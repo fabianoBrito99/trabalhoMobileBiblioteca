@@ -2,6 +2,8 @@
 
 ## 🚀 Guia de Execução
 
+De início o aplicativo pode demorar um pouco para fazer o processo de login e registrar por tá em uma api grátis com pouco recuso.
+
 O APK funciona online, com o banco de dados **MySQL** hospedado na **Railway** e a API em **Node.js** rodando no **Render**. No entanto, é possível executar o projeto localmente para testes.
 
 Para rodar o projeto localmente, siga os passos abaixo:
